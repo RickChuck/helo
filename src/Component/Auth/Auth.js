@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import axios from 'axios'
 
 class Auth extends Component{
     constructor(props) {
@@ -8,7 +8,14 @@ class Auth extends Component{
             username:'',
             passsword:''
         };
+        this.handleClick = this.handleClick.bind(this)
     }
+
+    handleClick= e => {
+        this.setState({
+            
+        })
+    } 
 
 
     
@@ -16,15 +23,13 @@ class Auth extends Component{
         return(
             <div className='Login'>
                <form onSubmit={this.handleSubmit}>
-                <FormGroup controlId="username" bsSize='large'>
-                 <ControlLabel>Username</ControlLabel>
-                 <FormControl autoFocus type='username' value={this.state.email} onChange={this.handleChange} />
-                </FormGroup>
-                <FormGroup controlId='password' bsSize='large'>
-                 <ControlLabel>Password</ControlLabel>
-                 <FormControl value={this.state.passsword} onChange={this.handleChange} type='password' />
-                </FormGroup>
-                <button block bsSize='large'>Login</button>
+                
+                 <h1>Username</h1>
+                 <input autoFocus type='username' value={this.state.username} onChange={this.handleChange} />
+                 <h1>Password</h1>
+                 <input value={this.state.passsword} onChange={this.handleChange} type='password' />
+                
+                <button className='button' onClick={this.handleClick}>Login</button>
 
                </form>
             </div>
